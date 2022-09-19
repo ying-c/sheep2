@@ -61,6 +61,8 @@ const makeScene: (level: number) => Scene = (level) => {
                 y: row * 100 + offset,
             });
         
+        var q: MySymbol;
+        console.log(q.id.length);
         
     };
 
