@@ -9,8 +9,9 @@ import React, {
 import './App.css';
 import { GithubIcon } from './GithubIcon';
 import { randomString, waitTimeout } from './utils';
+import Logo from './public/favicon.ico';
 
-const icons = [`🎨`, `🌈`, `⚙️`, `💻`, `📚`, `🐯`, `🐤`, `🐼`, `🐏`, `🍀`];
+const icons = [{ Logo },`🎨`, `🌈`, `⚙️`, `💻`, `📚`, `🐯`, `🐤`, `🐼`, `🐏`];
 
 // 最大关卡
 const maxLevel = 50;
