@@ -51,8 +51,6 @@ const makeScene: (level: number) => Scene = (level) => {
             range[0] + Math.floor((range[1] - range[0]) * Math.random());
         
         
-        const q = scene.length;
-        console.log(q);
         scene.push({
                 isCover: false,
                 status: 0,
