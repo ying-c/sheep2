@@ -52,6 +52,7 @@ const makeScene: (level: number) => Scene = (level) => {
         
         
         while (level < 10) {
+            console.log(scene.length);
             scene.push({
                 isCover: false,
                 status: 0,
