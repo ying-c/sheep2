@@ -50,7 +50,6 @@ const makeScene: (level: number) => Scene = (level) => {
         const column =
             range[0] + Math.floor((range[1] - range[0]) * Math.random());
         
-        console.log("q:" + offset.toString.length);
         
         scene.push({
                 isCover: false,
@@ -112,6 +111,62 @@ const washScene: (level: number, scene: Scene) => Scene = (level, scene) => {
 
     return updateScene;
 };
+
+
+
+//变叠盘================================================================================
+const changeScene: (level: number, scene: Scene) => Scene = (level, scene) => {
+    const updateScene = scene.slice().sort(() => Math.random() - 0.5);
+    const offsetPool = [0, 25, -25, 50, -50].slice(0, 1 + level);
+    const range = [
+        [2, 6],
+        [1, 6],
+        [1, 7],
+        [0, 7],
+        [0, 8],
+    ][Math.min(4, level - 1)];
+
+    const randomSet = (symbol: MySymbol) => {
+        const offset =
+            offsetPool[Math.floor(offsetPool.length * Math.random())];
+        const row =
+            range[0] + Math.floor((range[1] - range[0]) * Math.random());
+        const column =
+            range[0] + Math.floor((range[1] - range[0]) * Math.random());
+
+        var y1 = row * 100 + offset;
+
+        console.log("y1:" + y1);
+
+        if (y1 < 650) {
+            symbol.x = column * 100 + offset;
+            symbol.y = y1;
+            symbol.isCover = false;
+        } else if (650 <= y1 && y1 < 750) {
+            var x1 = 50;
+            symbol.x = x1 += 20;
+            symbol.y = y1;
+            symbol.isCover = false;
+        }
+
+    };
+
+    for (const symbol of updateScene) {
+        if (symbol.status !== 0) continue;
+        randomSet(symbol);
+    }
+
+    return updateScene;
+};
+
+
+
+
+
+
+
+
+
 
 interface SymbolProps extends MySymbol {
     onClick: MouseEventHandler;
@@ -283,6 +338,24 @@ const App: FC = () => {
         await waitTimeout(300);
 
         const filterSame = updateQueue.filter((sb) => sb.icon === symbol.icon);
+        
+        
+        
+        
+        
+        //变叠盘================================================================================
+        if (level >= 10) {
+            checkCover(changeScene(level, scene));
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         // 三连了
         if (filterSame.length === 3) {
