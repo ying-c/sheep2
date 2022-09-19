@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 export const GithubIcon: FC = () => {
     return (
         <a
-            href="https://github.com/StreakingMan/solvable-sheep-game"
+            href="https://github.com/ying-c/sheep-game"
             target="_blank"
             rel="noreferrer"
         >
