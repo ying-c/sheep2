@@ -50,6 +50,7 @@ const makeScene: (level: number) => Scene = (level) => {
         const column =
             range[0] + Math.floor((range[1] - range[0]) * Math.random());
         
+        console.log(offsetPool.length);
         
         scene.push({
                 isCover: false,
@@ -59,9 +60,6 @@ const makeScene: (level: number) => Scene = (level) => {
                 x: column * 100 + offset,
                 y: row * 100 + offset,
             });
-        
-        var q: MySymbol;
-        console.log("q:"+q.id.length);
         
     };
 
