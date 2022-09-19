@@ -75,7 +75,7 @@ const makeScene: (level: number) => Scene = (level) => {
                     y: y1,
                 });
                 break;
-            } else if (650 < y1 && y1 < 750) {
+            } else if (650 <= y1 && y1 < 750) {
                 var x1 = 50;
                 scene.push({
                     isCover: false,
