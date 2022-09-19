@@ -49,14 +49,49 @@ const makeScene: (level: number) => Scene = (level) => {
             range[0] + Math.floor((range[1] - range[0]) * Math.random());
         const column =
             range[0] + Math.floor((range[1] - range[0]) * Math.random());
-        scene.push({
-            isCover: false,
-            status: 0,
-            icon,
-            id: randomString(4),
-            x: column * 100 + offset,
-            y: row * 100 + offset,
-        });
+        
+        
+        while (level < 10) {
+            scene.push({
+                isCover: false,
+                status: 0,
+                icon,
+                id: randomString(4),
+                x: column * 100 + offset,
+                y: row * 100 + offset,
+            });
+            break;
+        }
+
+        while (level >= 10) {
+            var y1 = row * 100 + offset;
+            if (y1 < 650) {
+                scene.push({
+                    isCover: false,
+                    status: 0,
+                    icon,
+                    id: randomString(4),
+                    x: column * 100 + offset,
+                    y: y1,
+                });
+                break;
+            } else if (650 < y1 && y1 < 750) {
+                var x1 = 50;
+                scene.push({
+                    isCover: false,
+                    status: 0,
+                    icon,
+                    id: randomString(4),
+                    x: x1 += 20,
+                    y: y1,
+                });
+                break;
+            } else {
+                continue;
+            }
+        }
+        
+        
     };
 
     // 大于5级别增加icon池
