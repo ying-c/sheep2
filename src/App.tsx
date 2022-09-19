@@ -74,7 +74,8 @@ const makeScene: (level: number) => Scene = (level) => {
                     x: column * 100 + offset,
                     y: y1,
                 });
-                break;
+                console.log("1");
+                continue;
             } else if (650 <= y1 && y1 < 750) {
                 var x1 = 50;
                 scene.push({
@@ -85,10 +86,11 @@ const makeScene: (level: number) => Scene = (level) => {
                     x: x1 += 20,
                     y: y1,
                 });
-                break;
+                console.log("2");
+                continue;
             } else {
                 
-                console.log("11");
+                console.log("3");
             }
         }
         
