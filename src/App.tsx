@@ -87,7 +87,8 @@ const makeScene: (level: number) => Scene = (level) => {
                 });
                 break;
             } else {
-                continue;
+                
+                console.log("11");
             }
         }
         
