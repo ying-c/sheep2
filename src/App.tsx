@@ -50,7 +50,7 @@ const makeScene: (level: number) => Scene = (level) => {
         const column =
             range[0] + Math.floor((range[1] - range[0]) * Math.random());
         
-        console.log(offsetPool.length);
+        console.log("q:" + offset.toString.length);
         
         scene.push({
                 isCover: false,
