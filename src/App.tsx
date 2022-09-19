@@ -235,8 +235,24 @@ const App: FC = () => {
     // 初始化覆盖状态
     useEffect(() => {
         checkCover(scene);
+        
+        
+        
+        //变叠盘================================================================================
+        if (level >= 10) {
+            checkCover(changeScene(level, scene));
+        }
+        
+        
+        
+        
+        
+        
+        
+        
     }, []);
-
+    
+    
     // 向后检查覆盖
     const checkCover = (scene: Scene) => {
         const updateScene = scene.slice();
@@ -340,23 +356,6 @@ const App: FC = () => {
         const filterSame = updateQueue.filter((sb) => sb.icon === symbol.icon);
         
         
-        
-        
-        
-        //变叠盘================================================================================
-        if (level >= 10) {
-            checkCover(changeScene(level, scene));
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
         // 三连了
         if (filterSame.length === 3) {
             updateQueue = updateQueue.filter((sb) => sb.icon !== symbol.icon);
