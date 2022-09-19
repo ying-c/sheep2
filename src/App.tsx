@@ -50,8 +50,7 @@ const makeScene: (level: number) => Scene = (level) => {
         const column =
             range[0] + Math.floor((range[1] - range[0]) * Math.random());
         
-        var q: number = scene.length;
-        console.log(q);
+        
         scene.push({
                 isCover: false,
                 status: 0,
@@ -62,7 +61,7 @@ const makeScene: (level: number) => Scene = (level) => {
             });
         
         var q: MySymbol;
-        console.log(q.id.length);
+        console.log("q:"+q.id.length);
         
     };
 
