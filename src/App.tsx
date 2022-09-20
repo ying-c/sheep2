@@ -10,7 +10,7 @@ import './App.css';
 import { GithubIcon } from './GithubIcon';
 import { randomString, waitTimeout } from './utils';
 
-const icons = [`🍍`, `🍗`, `🍼`, `🍖`, `🌽`, `🍌`, `🍡`, `🍇`, `🍒`, `🍁`];
+const icons = [`🍭`, `🍡`, `🍖`, `🍗`, `🍼`, `🌽`, `🍌`, `🍇`, `🍒`, `🍁`];
 
 // 最大关卡
 const maxLevel = 50;
